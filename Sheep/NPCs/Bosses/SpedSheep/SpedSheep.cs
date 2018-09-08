@@ -9,15 +9,16 @@ using Terraria.ID;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-/*namespace Sheep.NPCs.Bosses.Sped_Sheep
+namespace Sheep.NPCs.Bosses.SpedSheep
 {
     public class SpedSheep : ModNPC
     {
         private Player player;
         private float speed;
+        private int countdown;
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Mutated Sheep");
+            DisplayName.SetDefault("Sped Sheep");
             Main.npcFrameCount[npc.type] = 3;
         }
 
@@ -48,9 +49,26 @@ using Microsoft.Xna.Framework.Graphics;
         {
             return (float)Math.Sqrt(mag.X * mag.X + mag.Y * mag.Y);
         }
+       /* private void DespawnHandler()
+        {
+            if (!player.active || player.dead)
+            {
+                npc.TargetClosest(false);
+                player = Main.player[npc.target];
+                if (!player.active || player.dead)
+                {
+                    npc.velocity = new Vector2(0f, -10f);
+                    if (npc.timeLeft > 10)
+                    {
+                        npc.timeLeft = 10;
+                    }
+                    return;
+                }
+            }
+        } */
         private void Shoot()
         {
-            int type = mod.ProjectileType("TutorialBossProjectile");
+            int type = mod.ProjectileType("SheepLaser");
             Vector2 velocity = player.Center - npc.Center; // Get the distance between target and npc.
             float magnitude = Magnitude(velocity);
             if (magnitude > 0)
@@ -63,5 +81,24 @@ using Microsoft.Xna.Framework.Graphics;
             }
             Projectile.NewProjectile(npc.Center, velocity, type, npc.damage, 2f);
         }
+
+        public override void AI()
+        {
+            aiType = NPCID.Unicorn;
+           // DespawnHandler(); // Handles if the NPC should despawn.f
+
+            //Attacking
+            countdown = 100;
+            countdown = countdown - 100; 
+            if (countdown == 0)
+            {
+              Shoot();
+              countdown = 100;
+            }
+        }
+        private void Target()
+        {
+            player = Main.player[npc.target]; // This will get the player target.
+        }
     }
-} **/
+}

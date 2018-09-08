@@ -11,8 +11,10 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sheep.NPCs.Bosses.FatSheep
 
-    //THIS BOSS IS INCOMPLETE BC IM TOO BAD AT CODING AND DON'T KNOW WHAT HALF OF THIS STUFF DOES. 
+    //THIS BOSS IS INCOMPLETE BC IM TOO BAD AT CODING AND DON'T KNOW WHAT HALF OF THIS STUFF DOES.
+
 {
+    /*
 
     
         [AutoloadBossHead]
@@ -100,7 +102,7 @@ namespace Sheep.NPCs.Bosses.FatSheep
                 }
                 Projectile.NewProjectile(npc.Center, velocity, type, npc.damage, 2f);
                 npc.ai[1] = 200f;
-            } **/
+            } **/ /*
 
             private float Magnitude(Vector2 mag)
             {
@@ -153,5 +155,7 @@ namespace Sheep.NPCs.Bosses.FatSheep
 
         }
     }
-    
+    **/
+}
+
 
