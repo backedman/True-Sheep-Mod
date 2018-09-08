@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2024
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sheep", "Sheep\Sheep.csproj", "{486FABAE-4548-478A-85E9-4E486F4A980B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{486FABAE-4548-478A-85E9-4E486F4A980B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{486FABAE-4548-478A-85E9-4E486F4A980B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{486FABAE-4548-478A-85E9-4E486F4A980B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{486FABAE-4548-478A-85E9-4E486F4A980B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6880C9FB-EBC1-4A60-9044-86AC421E2785}
+	EndGlobalSection
+EndGlobal

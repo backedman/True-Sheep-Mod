@@ -1,0 +1,14 @@
+Adds Sheeps into the game. More content related to sheeps will be added later.
+
+V0.03-
+Hired Spriter (Say hello to SomeGUI!)
+Updated Textures
+Added Bone Weapons
+Added Bone Armor (all of the textures in Bone Armor are placeholder textures)
+
+V0.02-
+Sheeps were added.
+Sheep bone drops changed to an exclusive drop by sheeps.
+
+V0.01-
+Sheep bones were added as a drop to every mob.
