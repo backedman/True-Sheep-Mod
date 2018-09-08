@@ -9,14 +9,14 @@ using Terraria.ID;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Sheep.NPCs.Bosses.Fat_Sheep
+namespace Sheep.NPCs.Bosses.FatSheep
 
     //THIS BOSS IS INCOMPLETE BC IM TOO BAD AT CODING AND DON'T KNOW WHAT HALF OF THIS STUFF DOES. 
 {
 
-    {
+    
         [AutoloadBossHead]
-        public class TutorialBoss : ModNPC
+        public class FatSheep : ModNPC
         {
             private Player player;
             private float speed;
@@ -58,7 +58,7 @@ namespace Sheep.NPCs.Bosses.Fat_Sheep
                 npc.ai[1] -= 1f; // Subtracts 1 from the ai.
                 if (npc.ai[1] <= 0f)
                 {
-                    Shoot();
+             //       Shoot();
                 }
             }
 
@@ -85,7 +85,7 @@ namespace Sheep.NPCs.Bosses.Fat_Sheep
                 }
             }
 
-            private void Shoot()
+           /* private void Shoot()
             {
                 int type = mod.ProjectileType("TutorialBossProjectile");
                 Vector2 velocity = player.Center - npc.Center; // Get the distance between target and npc.
@@ -100,7 +100,7 @@ namespace Sheep.NPCs.Bosses.Fat_Sheep
                 }
                 Projectile.NewProjectile(npc.Center, velocity, type, npc.damage, 2f);
                 npc.ai[1] = 200f;
-            }
+            } **/
 
             private float Magnitude(Vector2 mag)
             {
@@ -136,9 +136,9 @@ namespace Sheep.NPCs.Bosses.Fat_Sheep
                 {
                     if (Main.rand.Next(3) == 0) // For items that you want to have a chance to drop 
                     {
-                        Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TutorialBar"));
+                        Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SheepOre"));
                     }
-                    Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TutorialSummonItem")); // For Items that you want to always drop
+                    Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SheepOre")); // For Items that you want to always drop
                 }
 
                 // For settings if the boss has been downed
@@ -154,4 +154,4 @@ namespace Sheep.NPCs.Bosses.Fat_Sheep
         }
     }
     
-}
+

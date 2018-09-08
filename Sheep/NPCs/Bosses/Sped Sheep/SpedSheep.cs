@@ -9,7 +9,7 @@ using Terraria.ID;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Sheep.NPCs.Bosses.Sped_Sheep
+/*namespace Sheep.NPCs.Bosses.Sped_Sheep
 {
     public class SpedSheep : ModNPC
     {
@@ -64,4 +64,4 @@ namespace Sheep.NPCs.Bosses.Sped_Sheep
             Projectile.NewProjectile(npc.Center, velocity, type, npc.damage, 2f);
         }
     }
-}
+} **/

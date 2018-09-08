@@ -71,7 +71,7 @@
     <Compile Include="Items\Weapons\BoneSword.cs" />
     <Compile Include="Items\SheepBone.cs" />
     <Compile Include="Items\Weapons\SheepSword.cs" />
-    <Compile Include="NPCs\Bosses\Fat Sheep\FatSheep.cs" />
+    <Compile Include="NPCs\Bosses\FatSheep\FatSheep.cs" />
     <Compile Include="NPCs\Bosses\Sped Sheep\SpedSheep.cs" />
     <Compile Include="NPCs\MutatedSheep.cs" />
     <Compile Include="NPCs\Sheep.cs" />
