@@ -16,21 +16,21 @@ namespace Sheep.NPCs
         {
             npc.width = 48;
             npc.height = 32;
-            npc.damage = 30; //this is now a 3 shot (from 5 shot)
+            npc.damage = 20; //this is now a 3 shot (from 5 shot)
             npc.defense = 17;
-            npc.lifeMax = 45;
+            npc.lifeMax = 70;
             npc.HitSound = SoundID.NPCHit1;
             npc.DeathSound = SoundID.NPCDeath2;
             npc.value = 90f;
             npc.knockBackResist = 0.4f;
-            npc.aiStyle = 26;
             aiType = NPCID.Unicorn;
+            npc.aiStyle = 26;
             animationType = 3;
         }
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return SpawnCondition.OverworldNightMonster.Chance * 0.15f;
+            return SpawnCondition.OverworldNightMonster.Chance * 0.1f;
         }
         public override void NPCLoot()
         {
@@ -65,7 +65,7 @@ namespace Sheep.NPCs
 
             public override void OnHitPlayer(Player target, int damage, bool crit)
             {
-                target.AddBuff(mod.BuffType("WooledUp"), 700, true); //if player is hit, add WooledUp debuff for 300 ticks
+                target.AddBuff(mod.BuffType("WooledUp"), 500, true); //if player is hit, add WooledUp debuff for 500 ticks
             }
     }
 }

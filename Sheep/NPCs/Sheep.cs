@@ -16,7 +16,7 @@ namespace Sheep.NPCs
         {
             npc.width = 38;
             npc.height = 20;
-            npc.damage = 0;
+            npc.damage = 1 ;
             npc.defense = 14;
             npc.lifeMax = 45;
             npc.HitSound = SoundID.NPCHit1;

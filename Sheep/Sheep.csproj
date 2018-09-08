@@ -72,6 +72,7 @@
     <Compile Include="Items\SheepBone.cs" />
     <Compile Include="Items\Weapons\SheepSword.cs" />
     <Compile Include="NPCs\Bosses\Fat Sheep\FatSheep.cs" />
+    <Compile Include="NPCs\Bosses\Sped Sheep\SpedSheep.cs" />
     <Compile Include="NPCs\MutatedSheep.cs" />
     <Compile Include="NPCs\Sheep.cs" />
     <Compile Include="NPCs\SheepGlobalNPC.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Placeables\Bars\SheepBar.cs" />
     <Compile Include="Placeables\Ore\SheepOre.cs" />
     <Compile Include="Placeables\Wool.cs" />
+    <Compile Include="Projectiles\SheepLaser.cs" />
     <Compile Include="Sheep.cs" />
     <Compile Include="SheepNPC.cs" />
     <Compile Include="SheepPlayer.cs" />

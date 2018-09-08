@@ -13,7 +13,7 @@ namespace Sheep.NPCs.Bosses.Fat_Sheep
 
     //THIS BOSS IS INCOMPLETE BC IM TOO BAD AT CODING AND DON'T KNOW WHAT HALF OF THIS STUFF DOES. 
 {
-  /*
+
     {
         [AutoloadBossHead]
         public class TutorialBoss : ModNPC
@@ -45,15 +45,15 @@ namespace Sheep.NPCs.Bosses.Fat_Sheep
                 npc.HitSound = SoundID.NPCHit1;
                 npc.DeathSound = SoundID.NPCDeath1;
                 music = MusicID.Boss1;
+
             }
 
-            public override void AI()
+        public override void AI()
             {
                 Target(); // Sets the Player Target
 
                 DespawnHandler(); // Handles if the NPC should despawn.
 
-                Move(new Vector2(0, -100f)); // Calls the Move Method
                                              //Attacking
                 npc.ai[1] -= 1f; // Subtracts 1 from the ai.
                 if (npc.ai[1] <= 0f)
@@ -65,26 +65,6 @@ namespace Sheep.NPCs.Bosses.Fat_Sheep
             private void Target()
             {
                 player = Main.player[npc.target]; // This will get the player target.
-            }
-
-            private void Move(Vector2 offset)
-            {
-                speed = 10f; // Sets the max speed of the npc.
-                Vector2 moveTo = player.Center + offset; // Gets the point that the npc will be moving to.
-                Vector2 move = moveTo - npc.Center;
-                float magnitude = Magnitude(move);
-                if (magnitude > speed)
-                {
-                    move *= speed / magnitude;
-                }
-                float turnResistance = 10f; // The larget the number the slower the npc will turn.
-                move = (npc.velocity * turnResistance + move) / (turnResistance + 1f);
-                magnitude = Magnitude(move);
-                if (magnitude > speed)
-                {
-                    move *= speed / magnitude;
-                }
-                npc.velocity = move;
             }
 
             private void DespawnHandler()
@@ -173,5 +153,5 @@ namespace Sheep.NPCs.Bosses.Fat_Sheep
 
         }
     }
-    **/
+    
 }
