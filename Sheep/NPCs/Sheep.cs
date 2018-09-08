@@ -17,8 +17,8 @@ namespace Sheep.NPCs
             npc.width = 38;
             npc.height = 20;
             npc.damage = 0;
-            npc.defense = 3;
-            npc.lifeMax = 30;
+            npc.defense = 14;
+            npc.lifeMax = 45;
             npc.HitSound = SoundID.NPCHit1;
             npc.DeathSound = SoundID.NPCDeath2;
             npc.value = 90f; //money drop
@@ -39,7 +39,7 @@ namespace Sheep.NPCs
         }
         public override void OnHitPlayer(Player target, int damage, bool crit)
         {
-            target.AddBuff(mod.BuffType("WooledUp"), 150, true);
+            target.AddBuff(mod.BuffType("WooledUp"), 450, true);
         }
     }
 }

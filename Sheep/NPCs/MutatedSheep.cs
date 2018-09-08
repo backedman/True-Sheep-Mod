@@ -16,9 +16,9 @@ namespace Sheep.NPCs
         {
             npc.width = 48;
             npc.height = 32;
-            npc.damage = 40; //this is now a 3 shot (from 5 shot)
-            npc.defense = 14;
-            npc.lifeMax = 50;
+            npc.damage = 30; //this is now a 3 shot (from 5 shot)
+            npc.defense = 17;
+            npc.lifeMax = 45;
             npc.HitSound = SoundID.NPCHit1;
             npc.DeathSound = SoundID.NPCDeath2;
             npc.value = 90f;
@@ -65,7 +65,7 @@ namespace Sheep.NPCs
 
             public override void OnHitPlayer(Player target, int damage, bool crit)
             {
-                target.AddBuff(mod.BuffType("WooledUp"), 300, true); //if player is hit, add WooledUp debuff for 300 ticks
+                target.AddBuff(mod.BuffType("WooledUp"), 700, true); //if player is hit, add WooledUp debuff for 300 ticks
             }
     }
 }
