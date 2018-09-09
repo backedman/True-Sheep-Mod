@@ -14,8 +14,9 @@ namespace Sheep.NPCs.Bosses.SpedSheep
     public class SpedSheep : ModNPC
     {
         private Player player;
-        private float slowFactor;
+        private float speed;
         private int countdown;
+        Vector2[] playerCenter;
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Sped Sheep");
@@ -33,7 +34,7 @@ namespace Sheep.NPCs.Bosses.SpedSheep
             npc.DeathSound = SoundID.NPCDeath2;
             npc.value = 90f;
             npc.knockBackResist = 0.4f;
-            npc.aiStyle = -1;
+            npc.aiStyle = 26;
             animationType = 3;
             npc.npcSlots = 2f; // The higher the number, the more NPC slots this NPC takes.
             npc.boss = true; // Is a boss
@@ -50,19 +51,43 @@ namespace Sheep.NPCs.Bosses.SpedSheep
         }
         private float MagnitudeBody(Vector2 mag)
         {
-            return (float)mag.X;
+            return (float)Math.Sqrt(mag.X * mag.X + mag.Y * mag.Y);
         }
 
         private void Move(Vector2 offset)
         {
-            slowFactor = 10f; 
+            speed = 10f; 
             Vector2 moveTo = player.Center + offset; // Gets the point that the npc will be moving to.
             Vector2 move = moveTo - npc.Center;
             float magnitude = MagnitudeBody(move);
 
-            move *= magnitude/slowFactor;
-            
-  
+            move *= speed / magnitude;
+            float turnResistance = 10f; // The larget the number the slower the npc will turn.
+            move = (npc.velocity * turnResistance + move) / (turnResistance + 1f);
+            move *= speed / magnitude;
+            /*
+             * private void Move(Vector2 offset)
+        {
+            speed = 10f; // Sets the max speed of the npc.
+            Vector2 moveTo = player.Center + offset; // Gets the point that the npc will be moving to.
+            Vector2 move = moveTo - npc.Center;
+            float magnitude = Magnitude(move);
+            if(magnitude > speed)
+            {
+                move *= speed / magnitude; 
+            }
+            float turnResistance = 10f; // The larget the number the slower the npc will turn.
+            move = (npc.velocity * turnResistance + move) / (turnResistance + 1f);
+            magnitude = Magnitude(move);
+            if(magnitude > speed)
+            {
+                move *= speed / magnitude;
+            }
+            npc.velocity = move;
+        }
+*/
+
+
             npc.velocity = move;
         }
           private void DespawnHandler()
@@ -81,21 +106,22 @@ namespace Sheep.NPCs.Bosses.SpedSheep
                       return;
                   }
               }
-          } 
+          }
         private void Shoot()
         {
             int type = mod.ProjectileType("SheepLaser");
-            Vector2 velocity = player.Center - npc.Center; // Get the distance between target and npc.
+            Vector2 velocity = new Vector2(player.position.X, player.position.Y-50) - npc.Center; // Get the distance between target and npc.
             float magnitude = MagnitudeLaser(velocity);
             if (magnitude > 0)
             {
-                velocity *= 5f / magnitude;
+                velocity *= 10f / magnitude;
             }
             else
             {
                 velocity = new Vector2(0f, 5f);
             }
             Projectile.NewProjectile(npc.Center, velocity, type, npc.damage, 2f);
+            npc.ai[1] = 150f;
         }
 
         public override void AI()
@@ -104,7 +130,7 @@ namespace Sheep.NPCs.Bosses.SpedSheep
 
             DespawnHandler(); // Handles if the NPC should despawn.
 
-            Move(new Vector2(0, -100f)); // Calls the Move Method
+            //Move(new Vector2(0, -100f)); // Calls the Move Method
             //Attacking
             npc.ai[1] -= 1f; // Subtracts 1 from the ai.
             if (npc.ai[1] <= 0f)

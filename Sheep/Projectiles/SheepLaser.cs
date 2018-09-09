@@ -24,18 +24,22 @@ namespace Sheep.Projectiles
             projectile.height = 28;
             projectile.aiStyle = 1;
             projectile.friendly = false;
-            projectile.hostile = false;
+            projectile.hostile = true;
             projectile.ranged = true;
             projectile.penetrate = 5;
             projectile.timeLeft = 600;
             projectile.light = 0.5f;
             projectile.ignoreWater = true;
-            projectile.tileCollide = true;
+            projectile.tileCollide = false;
             projectile.extraUpdates = 1;
         }
-        public override void AI()           //this make that the projectile will face the corect way
+       public override void AI()           //this make that the projectile will face the corect way
         {                                                           
             projectile.rotation = (float)Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + 1.57f;
+        }
+        public override void OnHitPlayer(Player target, int damage, bool crit)
+        {
+            target.AddBuff(mod.BuffType("WooledUp"), 450, true);
         }
     } 
 }
